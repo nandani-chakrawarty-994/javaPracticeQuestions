@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: black;
+      font-family: system-ui;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    p {
+      color: green;
+      font-size: 2rem;
+      transition: 0.3s;
+    }
+    p:hover {
+      color: rgb(35, 216, 35);
+      font-weight: 3rem;
+    }
+    div {
+      padding: 2px;
+      margin: 20px;
+    }
+    div:hover {
+      padding: 5px;
+      margin: 5px;
+      border-radius: 50px;
+      background: rgb(53, 52, 52);
+      border: 2px solid rgb(26, 31, 45);
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p id="text">
+      Hello EveryOne 💞😘
+    </p>
+  </div>
+
+  <script>
+    const para = document.getElementById("text");
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    const originalText = para.innerHTML;
+    let increment=0;
+    function randomText(){
+        const str=originalText.split('').map(( char,index)=>{
+          if(index<increment){
+            return char
+          }
+            return characters.split('')[Math.floor(Math.random()*52)]
+        }).join("")
+        para.innerText=str
+        increment += 0.24
+    }
+    setInterval(randomText,100)
+
+    
+  </script>
+</body>
+</html>
